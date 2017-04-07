@@ -1,0 +1,44 @@
+
+@import '../../constants/theme';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px normal;
+  line-height: 1.4em;
+  background-color: $bg-color;
+  font-smoothing: antialiased;
+  font-weight: 300;
+  font-style: $primary-font-color;
+}
+.normal {
+  background-color: bg-color;
+  transition: $transition-main;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  appearance: none;
+  font-smoothing: antialiased;
+  outline: none;
+  transition: $transition-main;
+
+  &:active {
+    transform: scale(0.9, 0.9);
+    transition: none;
+  };
+}

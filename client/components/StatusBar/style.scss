@@ -1,0 +1,32 @@
+
+@import '../../constants/theme';
+
+.statusBar {
+  height: $touch-height *2;
+  line-height: $touch-height *2;
+  width: 100%;
+  background-color: $primary-color;
+  color:$primary-font-color;
+  box-sizing: border-box;
+  padding-left: 12px;
+
+  .back {
+    height: $touch-height *2;
+    line-height: $touch-height *2;
+    width: $touch-height *3;
+    text-align: center;
+    background-color: rgba($primary-color, 0.9);
+    color:$primary-font-color;
+
+    span.icon {
+      &:after{
+        color: $primary-font-color;
+        content: '⌫';
+      }
+    }
+    &:hover {
+      background-color: rgba($primary-color, 0.7);
+      color: $reverse-font-color;
+    }
+  }
+}
