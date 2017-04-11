@@ -8,23 +8,16 @@ import style from './style.scss'
 
 import StatusBar from '../../components/StatusBar'
 import Player from '../../components/Player'
+import SideBar from '../../components/SideBar'
 
 
 class App extends Component {
   render() {
-    const { 
-      children,
-      playlist,
-      player,
-      playlistActions,
-      playerActions
-    } = this.props
+    const { children, playlist, player, playlistActions, playerActions } = this.props
     return (
       <div className={style.normal}>
         <StatusBar history={this.props.history} />
-          <button onClick={()=>playerActions.nextMusic(playlist.length)}>下一首</button>
-          {player.music.status}
-          {player.music.id}
+        <SideBar />
           {children}
         <Player player={player} playlist={playlist} playerActions={playerActions} />
       </div>

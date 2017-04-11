@@ -25,7 +25,6 @@ class MusicRange extends Component {
   }
 
   handleMouseDownRange(e) {
-    console.log(e.target)
     if(e.target.value === this.state.status) {
       this.setState({'mouseDownStatus': e.target.value})
     }
@@ -54,16 +53,14 @@ class MusicRange extends Component {
   }
 
   playerUpdate(nextPlayer){
-    const status = this.state.staus
     const audio = this.refs.audio
+    const status = audio.currentTime
 
-    // if(nextPlayer.music.pause !== player.music.pause) {
-    if(nextPlayer.music.pause) {
-        audio.pause()
-      } else {
-        audio.play()
-    }
-    // }
+    if(nextPlayer.music.pause !== audio.paused){
+      nextPlayer.music.pause
+        ?audio.pause()
+        :audio.play()
+    }  
 
     if(this.approximate(nextPlayer.music.status, status)) {
       this.currentTimeUpdate(nextPlayer.music.status)
@@ -80,7 +77,6 @@ class MusicRange extends Component {
     const currentTime = e.target.currentTime
     const playerActions = this.props.playerActions
     const duration = this.state.duration
-    const status = this.state.status
     if(!this.state.mouseDown) {
       if(currentTime < duration) {
         // if(currentTime-status > 1) {
@@ -113,6 +109,11 @@ class MusicRange extends Component {
     const durationToTime = new Date(duration *1000).toLocaleString('en-US', timeOptions)
     return (
       <div className={style.track}>
+        <audio 
+          src={music.mp3Url} 
+          ref="audio"
+          onTimeUpdate={::this.currentTimeAuto}>
+        </audio>
         <div className={style.info}>
           {music.name}
           <span className={style.artist}>
@@ -133,11 +134,6 @@ class MusicRange extends Component {
           onMouseDown={::this.handleMouseDownRange}
           onChange={::this.handleChangeRange}
           onMouseUp={::this.handleMouseUpRange}/>
-        <audio 
-          src={music.mp3Url} 
-          ref="audio"
-          onTimeUpdate={::this.currentTimeAuto}>
-        </audio>
       </div>
     )
   }
