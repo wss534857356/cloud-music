@@ -1,0 +1,47 @@
+
+@import '../../constants/theme';
+
+$sideBar-bg-color: #f3f3f5;
+$menu-width: 190px;
+$menu-button-height: 40px;
+$menu-box-off-line: 1px solid #dddde1;
+
+.normal {
+  width: $menu-width;
+  background-color: $sideBar-bg-color;
+  position: absolute;
+  top: $touch-height *2;
+  bottom: $player-height;
+  border-right: $menu-box-off-line;
+
+  .menus {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    
+    .button {
+      width: $menu-width;
+      height: $menu-button-height;
+      display: block;
+      color: #000;
+      padding-left: 10px;
+      text-decoration: none;
+      box-sizing: border-box;
+      line-height: $menu-button-height;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+
+    .button_active {
+      background-color: #dddde1;
+      &:hover {
+        background-color: #dddde1;
+      }
+    }
+  }
+}
