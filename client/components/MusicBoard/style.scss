@@ -1,0 +1,18 @@
+
+@import '../../constants/theme';
+$menu-width: 190px;
+.board {
+  position: absolute;
+  top: $touch-height *2;
+  bottom: $player-height;
+
+  .menu {
+    width: $menu-width;
+    float: left;
+  }
+
+  .body {
+    margin-left: $menu-width;
+    
+  }
+}

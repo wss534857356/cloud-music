@@ -8,7 +8,7 @@ import style from './style.scss'
 
 import StatusBar from '../../components/StatusBar'
 import Player from '../../components/Player'
-import SideBar from '../../components/SideBar'
+import MusicBoard from '../../components/MusicBoard'
 
 
 class App extends Component {
@@ -17,8 +17,9 @@ class App extends Component {
     return (
       <div className={style.normal}>
         <StatusBar history={this.props.history} />
-        <SideBar />
+        <MusicBoard>
           {children}
+        </MusicBoard>
         <Player player={player} playlist={playlist} playerActions={playerActions} />
       </div>
     )

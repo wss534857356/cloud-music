@@ -2,18 +2,18 @@
 @import '../../constants/theme';
 
 $sideBar-bg-color: #f3f3f5;
-$menu-width: 190px;
+// $menu-width: 190px;
 $menu-button-height: 40px;
 $menu-box-off-line: 1px solid #dddde1;
 
 .normal {
-  width: $menu-width;
+  // width: $menu-width;
   background-color: $sideBar-bg-color;
-  position: absolute;
-  top: $touch-height *2;
-  bottom: $player-height;
   border-right: $menu-box-off-line;
-
+  height: 100%;
+  ul {
+    width: inherit;
+  }
   .menus {
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@ $menu-box-off-line: 1px solid #dddde1;
     left: 0;
     
     .button {
-      width: $menu-width;
+      width: inherit;
       height: $menu-button-height;
       display: block;
       color: #000;
@@ -33,7 +33,7 @@ $menu-box-off-line: 1px solid #dddde1;
       line-height: $menu-button-height;
 
       &:hover {
-        background-color: #e0e0e0;
+        background-color: #e8e8eb;
       }
     }
 

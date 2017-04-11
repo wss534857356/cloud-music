@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import { SEARCH_LIST_MENU, PLAY_LIST_MENU} from '../../constants/filters'
+import cs from 'classnames'
 import style from './style.scss'
 
 const MENU_FILTERS = {
@@ -24,8 +25,9 @@ class SideBar extends Component {
     )
   }
   render() {
+    const SideBarClass = cs(style.normal, this.props.className)
     return (
-      <div className={style.normal}>
+      <div className={SideBarClass}>
         <ul className={style.menus}>
           {[SEARCH_LIST_MENU, PLAY_LIST_MENU].map(filter =>
             <li key={filter}>
