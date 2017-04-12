@@ -5,6 +5,7 @@ $menu-width: 190px;
   position: absolute;
   top: $touch-height *2;
   bottom: $player-height;
+  width: 100%;
 
   .menu {
     width: $menu-width;

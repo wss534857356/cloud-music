@@ -2,20 +2,19 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as PlaylistActions from '../../actions/playlist'
+import * as playlistActions from '../../actions/playlist'
+import * as playerActions from '../../actions/player'
 import style from './style.scss'
 
+import ListView from '../../components/ListView'
+
 class Playlist extends Component {
-  renderTab(filter) {
-    return (
-      <div></div>
-    )
-  }
   render() {
+    const { playlist, player, playlistActions, playerActions } = this.props
     return (
       <div className={style.PlaylistBody}>
         <span>播放列表</span>
-        {this.renderTab("")}
+        <ListView playlist={playlist} playerActions={playerActions}></ListView>
       </div>
     )
   }
@@ -30,7 +29,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    playlistActions: bindActionCreators(PlaylistActions, dispatch)
+    playlistActions: bindActionCreators(playlistActions, dispatch),
+    playerActions: bindActionCreators(playerActions, dispatch)
   }
 }
 

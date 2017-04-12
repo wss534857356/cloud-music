@@ -14,9 +14,11 @@ import MusicBoard from '../../components/MusicBoard'
 class App extends Component {
   render() {
     const { children, playlist, player, playlistActions, playerActions } = this.props
+    const routes = this.props.location
+    // console.log(routes)
     return (
       <div className={style.normal}>
-        <StatusBar history={this.props.history} />
+        <StatusBar routes={routes} />
         <MusicBoard>
           {children}
         </MusicBoard>

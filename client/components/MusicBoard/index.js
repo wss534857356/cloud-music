@@ -5,12 +5,12 @@ import SideBar from '../SideBar'
 
 class MusicBoard extends Component {
   render() {
-    const children = this.props
+    const { children } = this.props
     return (
       <div className={style.board}>
         <SideBar className={style.menu}/>
         <div className={style.body}>
-          {children.children}
+          {children}
         </div>
       </div>
     )

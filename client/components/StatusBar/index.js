@@ -1,24 +1,27 @@
 
 import React, { Component } from 'react'
+import { browserHistory } from 'react-router'
 import style from './style.scss'
 
 class StatusBar extends Component {
   renderBackButton(history) {
-    if(history.length > 0) {
+    if(history.pathname !== '/') {
       return (
         <button className={style.back}>
-          <span className={style.icon} onClick={()=>history.go(-1)}></span>
+          <span className={style.icon} onClick={()=>browserHistory.goBack()}></span>
         </button>
       )
     }
   }
   render() {
-    const { routesState, history } = this.props
+    const { routes } = this.props
     const title = 'cloud music'.toUpperCase();
     return (
       <div className={style.statusBar}>
-        {this.renderBackButton(history)}
-        {title}
+        {this.renderBackButton(routes)}
+        <span style={{paddingLeft: 12}}>
+          {title}
+        </span>
       </div>
     )
   }

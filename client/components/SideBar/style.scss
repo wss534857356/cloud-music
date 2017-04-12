@@ -33,14 +33,14 @@ $menu-box-off-line: 1px solid #dddde1;
       line-height: $menu-button-height;
 
       &:hover {
-        background-color: #e8e8eb;
+        background-color: $button-hover-color;
       }
     }
 
     .button_active {
-      background-color: #dddde1;
+      background-color: $button-active-color;
       &:hover {
-        background-color: #dddde1;
+        background-color: $button-active-color;
       }
     }
   }

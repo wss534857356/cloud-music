@@ -1,6 +1,6 @@
 
 @import '../../constants/theme';
-$artist-color: #999;
+
 $button-play-radius: 15px;
 $player-bg-color: #fefefe;
 
@@ -101,6 +101,6 @@ $player-bg-color: #fefefe;
   }
 
   .artist {
-    color: $artist-color;
+    color: $prominent-color;
   }
 }

@@ -1,0 +1,54 @@
+
+@import '../../constants/theme';
+
+$item-height: 40px;
+
+.list {
+  width: 100%;
+  overflow: auto;
+
+  .items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .item {
+      width: inherit;
+      height: $item-height;
+      display: block;
+      color: #000;
+      padding-left: 10px;
+      text-decoration: none;
+      box-sizing: border-box;
+      line-height: $item-height;
+      overflow: hidden;
+
+      &:hover {
+        background-color: $button-hover-color;
+      }
+      div {
+        float: left;
+      }
+      .name {
+        width: 400px;
+      }
+
+      .artist {
+        width: 200px;
+        color: $prominent-color;
+      }
+
+      .album {
+        width: 200px;
+        color: $prominent-color;
+      }
+    }
+
+    .item_active {
+      background-color: $button-active-color;
+      &:hover {
+        background-color: $button-active-color;
+      }
+    }
+  }
+}
