@@ -13,7 +13,6 @@ class Playlist extends Component {
     const { playlist, player, playlistActions, playerActions } = this.props
     return (
       <div className={style.PlaylistBody}>
-        <span>播放列表</span>
         <ListView
           playlist={playlist}
           player={player}

@@ -7,7 +7,7 @@ class ListView extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      active: 0
+      active: -1
     }
   }
 
@@ -18,18 +18,15 @@ class ListView extends Component {
   }
 
   renderItem(item, index) {
-    let active
-    const { playerActions } = this.props
-    if(index === this.state.active) {
-      active = true
-    } else {
-      active = false
-    }
+    const { playerActions, player } = this.props
+    const active = index === this.state.active? true: false
+    const playing = player.music.id === index+1? true: false
     return (
       <Item
         item={item}
         key={index}
         index={index}
+        playing={playing}
         active={active}
         {...playerActions}
         onItemActive={()=>this.handleItemActive(index)} />

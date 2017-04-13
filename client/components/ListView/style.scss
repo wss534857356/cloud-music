@@ -23,24 +23,31 @@ $item-height: 40px;
       line-height: $item-height;
       overflow: hidden;
 
-      &:hover {
-        background-color: $button-hover-color;
-      }
-      div {
-        float: left;
-      }
       .name {
-        width: 400px;
+        min-width: 200px;
+        width: 40%;
       }
 
       .artist {
-        width: 200px;
         color: $prominent-color;
+        width: 20%;
       }
 
       .album {
-        width: 200px;
         color: $prominent-color;
+        width: 20%;
+      }
+
+      >div {
+        width: 100%;
+      }
+      
+      div {
+        float: left;
+      }
+
+      &:hover {
+        background-color: $button-hover-color;
       }
     }
 
@@ -48,6 +55,11 @@ $item-height: 40px;
       background-color: $button-active-color;
       &:hover {
         background-color: $button-active-color;
+      }
+    }
+
+    .item_play {
+      .play_icon {
       }
     }
   }

@@ -1,8 +1,10 @@
 
 import { handleActions } from 'redux-actions'
 import { PLAY_ORDER } from '../constants/filters'
+import { getPlayer } from '../localStorage/player'
 
-const initialState = {
+const initialState = getPlayer()
+/*{
   music: {
     id:1,
     pause: false,
@@ -11,7 +13,7 @@ const initialState = {
   choose: PLAY_ORDER,
   sound: 80
 }
-
+*/
 export default handleActions({
   'choose music' (state, action){
     return {

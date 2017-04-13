@@ -18,7 +18,9 @@ class StatusBar extends Component {
     const title = 'cloud music'.toUpperCase();
     return (
       <div className={style.statusBar}>
-        {this.renderBackButton(routes)}
+        { 
+          // this.renderBackButton(routes) 
+        }
         <span style={{paddingLeft: 12}}>
           {title}
         </span>
