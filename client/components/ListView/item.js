@@ -5,7 +5,7 @@ import cs from 'classnames'
 
 class Item extends Component {
   handleDoubleClick(index) {
-    this.props.chooseMusic(index+1)
+    this.props.onChooseMusic(index+1)
   }
   renderPlayingIcon(playing) {
     if(playing)
@@ -26,6 +26,16 @@ class Item extends Component {
         </div>
       )
   }
+  renderActiveIcon() {
+    const { active, item, onRemove } = this.props
+    if(active && onRemove) {
+      return(
+        <div className={style.active_icon}>
+          <button onClick={()=>onRemove(item.id)}>X</button>
+        </div>
+      )
+    }
+  }
   render() {
     const { item, index, active, playing } = this.props
     const itemClass = cs({
@@ -42,6 +52,7 @@ class Item extends Component {
             <div className={style.name}>
               {this.renderPlayingIcon(playing)}
               {item.name}
+              {this.renderActiveIcon()}
             </div>
             <div className={style.artist}>
               {item.artists[0].name}

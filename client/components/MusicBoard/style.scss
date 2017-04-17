@@ -16,5 +16,8 @@ $menu-width: 190px;
     margin-left: $menu-width;
     background-color: #fafafc;
     height: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    // width: 100%;
   }
 }

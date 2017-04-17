@@ -1,0 +1,29 @@
+
+@import '../../constants/theme';
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+.normal {
+  margin: 0;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: 1.4em;
+  border: 0;
+  outline: none;
+  color: inherit;
+  padding: 6px;
+  border: 1px solid #e4e4e7;
+  width: 100%;
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  padding: 8px;
+  @include placeholder {
+    color: #ccc;
+  }
+}

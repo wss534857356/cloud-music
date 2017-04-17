@@ -3,6 +3,7 @@ import React from 'react'
 import { Route, IndexRedirect } from 'react-router'
 import App from '../containers/App'
 import Playlist from '../containers/Playlist'
+import Search from '../containers/Search'
 import { PLAY_LIST_MENU, SEARCH_LIST_MENU } from '../constants/filters'
 
 module.exports = (
@@ -10,7 +11,9 @@ module.exports = (
     <Route path="/" component={App}>
       <IndexRedirect to={PLAY_LIST_MENU} />
       <Route path={PLAY_LIST_MENU} component={Playlist}></Route>
-      <Route path={SEARCH_LIST_MENU}></Route>
+      <Route path={SEARCH_LIST_MENU} component={Search}>
+        <Route path=":search"></Route>
+      </Route>
     </Route>
   </div>
 )

@@ -56,6 +56,10 @@ $item-height: 40px;
       &:hover {
         background-color: $button-active-color;
       }
+      .active_icon {
+        float: right;
+        color: $primary-color;
+      }
     }
 
     .item_play {

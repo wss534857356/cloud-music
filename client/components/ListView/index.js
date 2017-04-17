@@ -18,9 +18,16 @@ class ListView extends Component {
   }
 
   renderItem(item, index) {
-    const { playerActions, player } = this.props
+    const { playerActions, player, onChooseMusic, onRemove } = this.props
     const active = index === this.state.active? true: false
-    const playing = player.music.id === index+1? true: false
+    const playing =player
+    ? player.music.id === index+1
+      ? true
+      : false
+    : false
+    const chooseMusic = onChooseMusic
+      ? ()=>onChooseMusic(item)
+      : playerActions.chooseMusic
     return (
       <Item
         item={item}
@@ -28,7 +35,8 @@ class ListView extends Component {
         index={index}
         playing={playing}
         active={active}
-        {...playerActions}
+        onChooseMusic={chooseMusic}
+        onRemove={onRemove}
         onItemActive={()=>this.handleItemActive(index)} />
     )
   }

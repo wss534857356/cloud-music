@@ -9,6 +9,13 @@ import style from './style.scss'
 import ListView from '../../components/ListView'
 
 class Playlist extends Component {
+  handleDeletePlaylist(id) {
+    const { playlist, player, playlistActions, playerActions } = this.props
+    if(player.music.id>playlist.length-1){
+      playerActions.chooseMusic(1)
+    }
+    playlistActions.deletePlaylist(id)
+  }
   render() {
     const { playlist, player, playlistActions, playerActions } = this.props
     return (
@@ -17,7 +24,8 @@ class Playlist extends Component {
         <ListView
           playlist={playlist}
           player={player}
-          playerActions={playerActions}>
+          playerActions={playerActions}
+          onRemove={::this.handleDeletePlaylist}>
         </ListView>
       </div>
     )

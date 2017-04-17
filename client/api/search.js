@@ -1,22 +1,21 @@
 
-import { searchApi } from 'api'
+import { http, searchApi } from './api'
 
-export function postSearch(search, offset=1, limit=10, type=1) {
-  fetch(searchApi, {
+export function postSearch(getList, search, offset=0, limit=10, type=1) {
+  return fetch(http + searchApi, {
     method: "POST",
+    // mode: "no-cors",
     headers: {
-      "Cookie": "appver=1.5.0.75771",
-      "Referer": "http://music.163.com/"
+      "Content-Type": "application/x-www-form-urlencoded"
     },
     body: `s=${search}&offset=${offset}&limit=${limit}&type=${type}`
   }).then(function(res) {
     if(res.ok) {
-      return res.json().then(data => data.result.songs);
+      res.json().then(data => getList(data.result.songs));
     } else {
       throw new Error("response Error");
     }
   }, function(err) {
-    return [];
     throw new Error(err);
   })
 }

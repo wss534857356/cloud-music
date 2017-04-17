@@ -1,5 +1,6 @@
 
 import { onSavePlayer } from '../localStorage/player'
+import { onSavePlaylist } from '../localStorage/playlist'
 
 function saveLocalStorage(save, store, action, array) {
   if(array.indexOf(action.type) !== -1){
@@ -17,4 +18,11 @@ export default store => next => action => {
     'next music'
   ]
   saveLocalStorage(onSavePlayer, store.getState().player, action, playerActions)
+
+  const playlistActions = [
+    'add playlist',
+    'delete playlist',
+    'clear playlist'
+  ]
+  saveLocalStorage(onSavePlaylist, store.getState().playlist, action, playlistActions)
 }

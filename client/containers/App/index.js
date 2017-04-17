@@ -12,9 +12,17 @@ import MusicBoard from '../../components/MusicBoard'
 
 
 class App extends Component {
+  renderPlayer() {
+    const { playlist, player, playerActions } = this.props
+    if(playlist.length>0)
+      return (
+        <Player player={player} playlist={playlist} playerActions={playerActions} />
+      )
+  }
   render() {
     const { children, playlist, player, playlistActions, playerActions } = this.props
     const routes = this.props.location
+
     // console.log(routes)
     return (
       <div className={style.normal}>
@@ -22,7 +30,7 @@ class App extends Component {
         <MusicBoard>
           {children}
         </MusicBoard>
-        <Player player={player} playlist={playlist} playerActions={playerActions} />
+        {this.renderPlayer(playlist)}
       </div>
     )
   }

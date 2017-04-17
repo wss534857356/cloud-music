@@ -20,6 +20,12 @@ body {
 .normal {
   background-color: bg-color;
   transition: $transition-main;
+
+  .body {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+  }
 }
 
 button,

@@ -5,11 +5,12 @@
   "description": "A music App like http://music.163.com",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "start": "npm run fetch-server&&webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "set NODE_ENV=production&& webpack --progress --colors",
     "buildp": "set NODE_ENV=production&&webpack --progress --colors --config webpack.config.production.js",
     "dev": "npm run build&&npm run server",
-    "server": "node server/server.js"
+    "server": "node server/server.js",
+    "fetch-server": "start cmd /c \"node server/fetch.js\""
   },
   "license": "MIT",
   "dependencies": {
@@ -23,6 +24,8 @@
     "css-loader": "^0.23.1",
     "express": "^4.14.1",
     "file-loader": "^0.8.5",
+    "iconv-lite": "^0.4.15",
+    "node-fetch": "^1.6.3",
     "postcss-loader": "^0.8.1",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
@@ -49,6 +52,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "http-proxy": "^1.16.2",
     "node-sass": "^4.5.2",
     "postcss-loader": "^0.8.1",
     "react": "^15.0.0",
