@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "set NODE_ENV=production&& pm2 start fetch.js --node-args='--harmony' --name 'cross'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "^2.4.5"
+  }
+}

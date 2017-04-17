@@ -1,5 +1,5 @@
 
-export const http = "http://localhost:3001"
+export const http = "http://119.29.40.41:3001/"
 export const searchApi = '/api/search/pc/'
 export const artistApi = 'api/artist/albums/[artist_id]/'
 export const albumApi = '/api/album/[album_id]/'
